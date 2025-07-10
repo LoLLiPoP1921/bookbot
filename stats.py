@@ -16,3 +16,14 @@ def count_characters(text):
         count = characters.count(character)
         char_count_dic[character] = count
     return char_count_dic
+
+def sort_dic(chars):
+    sorted_chars_final = []
+    sorted_by_value = dict(sorted(chars.items(), key=lambda x: x[1], reverse=True))
+    for key in sorted_by_value:
+        dic_entry = {"char": "", "num": 0}
+        dic_entry["char"] = key
+        dic_entry["num"] = sorted_by_value[f"{key}"]
+        sorted_chars_final.append(dic_entry)
+
+    return sorted_chars_final
