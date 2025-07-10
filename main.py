@@ -1,3 +1,6 @@
+from stats import count_words
+from stats import count_characters
+
 def get_book_text():
     """
     returns the contents of the frankenstein.txt in /books as a string
@@ -6,15 +9,11 @@ def get_book_text():
         file_contents = f.read()
         return file_contents
     
-def count_words(text):
-    """
-    Counts the words in a string
-    """
-    return len(text.split())
 
 def main():
     text = get_book_text()
     print(f"{count_words(text)} words found in the document")
+    print(count_characters(text))
 
 
 main()
